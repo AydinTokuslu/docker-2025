@@ -21,7 +21,7 @@ provider "github" {
 }
 
 variable "git-token" {
-  default = "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"
+  default = "XXXXXXXXXXXXXXX"
 }
 
 variable "git-name" {
