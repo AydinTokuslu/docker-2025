@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  flask-app:
+    build: .
+    ports:
+      - "5000:8080"
+    environment:
+      - APP_START_DELAY=0
+    restart: always
