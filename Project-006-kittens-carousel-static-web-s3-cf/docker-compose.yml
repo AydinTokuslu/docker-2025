@@ -1,0 +1,19 @@
+services:
+  web:
+    build: .
+    restart: always
+    depends_on: 
+        - redis
+    ports:
+        - "80:80"
+    networks:
+      - clarusnet
+
+  redis:
+    image: "redis:alpine"
+    networks:
+      - clarusnet
+
+networks:
+  clarusnet:
+    driver: bridge
