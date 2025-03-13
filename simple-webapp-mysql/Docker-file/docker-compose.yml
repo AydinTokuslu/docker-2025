@@ -1,0 +1,29 @@
+services:
+  mysql:
+    image: mysql:5.7
+    environment:
+        MYSQL_ROOT_PASSWORD: R1234r
+        MYSQL_DATABASE: localhost
+        MYSQL_USER: root
+        MYSQL_PASSWORD: paswrd
+    networks:
+      - clarusnet
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  myapp:
+    build: .
+    restart: always
+    depends_on: 
+        - mysql
+    ports:
+        - "8080:8080"
+    networks:
+      - clarusnet
+
+networks:
+  clarusnet:
+    driver: bridge
+
+volumes:
+  mysql-data:
