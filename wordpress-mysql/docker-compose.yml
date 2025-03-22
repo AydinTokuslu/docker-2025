@@ -28,5 +28,6 @@ services:
       - WORDPRESS_DB_NAME=wordpress
     depends_on: 
         - db
+
 volumes:
   db_data:
